@@ -1,0 +1,321 @@
+SQL : ---> MySQL : ----> OLTP --->transcations data 
+
+MS SQL SERVER ( 95 % ) 
+
+Current Data ( live data ) , frequently continusy updated data 
+
+SQL Sub casssifiactions : ---->
+
+---> collect data DDL 
+---> Processs the data ---> DML 
+---> Retrive the data ---->DQL 
+--Manage the acccess -----> DCL ( grant , revoke ) 
+---> save or rollback -----> TCL ( roll back , commit , savae point ) 
+
+SQL Datatypes : ----> 
+
+SQL Constarints : ----> 
+
+
+not null , unique , primary key , default , check 
+
+primary key : ---> 656 , 998 , 432 , 
+
+SQL Opeartors : -----> 
+
+Arithemeic 
+Comparsion : where 
+Logical : --->  Like( % , _ ) 
+ , ALL ,any , exists 
+
+sub queries : ---> 
+
+
+like : ---->  pattern  varchar or char fields 
+
+
+Wild card : % , _ 
+
+
+
+
+
+
+: ----> 
+
+
+1) auto_increment : it will increment row values in sequencial order 
+
+initial value is 1 ---> increased by 1 
+
+
+create table test_auto ( 
+id int auto_increment , 
+name varchar(10) ,
+primary key (id , ac_nvr , pan_br, aadhar ) ) ;
+              101 , 4444, 111112, 12334
+               101 , 4444, 111412, 12334
+
+\
+ insert into test_auto values ( 1, "QT") ;
+  insert into test_auto(name) values ( "abcd") ;
+
+
+2) Index : ----> Speed up query execution ; 
+
+
+create index index_name on table_name(id , acc_nbr )  ;
+
+
+
+
+3) Foreign key : ---->
+
+
+MySQL : ---> RDBMS 
+
+RDBMS : ---> relation between tables 
+
+1:1 --- >1 : 
+1:M  ---> m 
+m: 1  ---> m : m
+m:m   ----> 
+
+Primary key( primary table / base table / parent table ) 
+
+ and foreign key( child table , seciondary table ) 
+ 
+ employee ---- emp_id is prmary key 
+ 
+ depertement --> ( dept_nbr int primary key  , name , emp_id ) 
+ 
+ 
+ bank table ( acc_nbr , 
+              IFSC , 
+			  CRN , 
+			  
+			  
+			  
+			 
+ create table dept ( 
+ dept_
+ 
+ 
+
+ ------------------------
+ 
+ 
+ 
+ SQL : ---> Normalization : ---> dups 
+        1) pk 
+		2) 
+		
+		
+		6) 
+ 
+ 
+ 
+
+
+foreign key : ---> 
+
+
+
+create table department ( 
+dept_id int , 
+name varchar(200),
+e_id int , 
+primary key(dept_id),
+foreign key(e_id) references employee( emp_id ) ) ;  
+
+
+customer -- cust_id --PK  ( 101 --- 109 ) 
+
+order -- cus_id == fk 
+
+-------
+orders tables: 
+
+101 , iphone . 
+101, adaptor 
+201,
+
+
+
+
+
+SQL JOINS : ---> 
+
+Joins : ---> Combine two or more tables  
+
+Inner Join / join  : ---> matching records from both the tables 
+
+
+Syntax : ---> 
+
+emp_id , name , 
+
+
+select 
+e.emp_id , 
+d.name 
+from employee as e 
+inner join 
+department as d 
+on e.emp_id = d.e_id ; 
+
+---------------------------------
+
+select 
+e.emp_id , 
+d.name 
+from employee as e , department as d 
+where e.emp_id = d.e_id ; 
+
+
+
+--------------------------------------
+How this join will works : 
+
+custmoer :  
+id , name , address     on customer.id = orders.custominfo
+1
+2
+3
+4
+5
+6
+NULL 
+
+orders  ---- select c.name, o.name , c.address 
+o_id , name , custominfo 
+                789 
+12331, pc 
+				6
+				12345
+175512  , charger ,  4 
+                  		
+
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+table a 
+1,a 
+2, b 
+3, c
+NULL ,xyz
+a , abcd   
+table b              result : 
+3, C                    c,C
+4, D 
+5, E 
+NULL , F 
+NULL , G 
+a, pqrs 
+inner join : 
+select t.name , t2.name from tablea 
+inner join 
+tableb  on t.id =t2.id ; 
+
+----------------------
+
+
+	
+
+
+
+
+-----> 
+1)  identify ( employee -- emp_id --- int ) 
+              ( department --- e_id -- int  ) 
+
+---------------->check data -- datavalodations 
+
+tabe1                      table2
+id , name                 t_id , t_value 
+1, a                       3, M 
+1, b                       3, B  
+1,c                        3, U
+2, QT                      1, A
+3, N                       1, W
+NULL , abcd                NULL , NULL 
+null , ABCD                NULLL , abcd
+                           null , b 
+-----------------------------------------
+
+1 , 1,a 
+1, 1, b 
+
+id , t_id ,name 
+
+Table_1	Table_2
+_____________________
+1	      1
+1	      2
+2	      2
+3	      4
+5	      Null
+6	
+NULL
+-------------------
+record table1 X table2 
+1----> 2      X   1 == 2 
+2----->1      X   2 == 2 
+3----->1      X   0 == 0 
+4-----> 0 X 1 ==== 0 
+5---> 1 X 0 ==== 0 
+------------------------ == 4  ;
+
+
+-----Output ------- 
+1 1 
+1 1 
+2 2 
+2 2
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Left Join / Left Outer join 
+Right Join / Right outer join 
+Full join / Full Outer join 
+Self join 
+Equi Join 
+Cross join   
+
+
+
+
+
+zomato : --
+
+custmoer ---1000 
+
+orders --- 200 
+
+-----------------------
+cust_names who placed orders 
+
+200 custmoers names ( cust_id ) 

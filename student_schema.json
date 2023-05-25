@@ -1,0 +1,20 @@
+[
+ {
+  "name":"student_id",
+  "type":"STRING",
+  "mode":"REQUIRED" ,
+  "description" : "student number " 
+  },
+  {
+  "name":"student_name",
+  "type":"STRING",
+  "mode":"REQUIRED" ,
+  "description" : "student number " 
+  },
+  {
+  "name":"student_gender",
+  "type":"STRING",
+  "mode":"NULLABLE" ,
+  "description" : "student number " 
+  }
+] 
